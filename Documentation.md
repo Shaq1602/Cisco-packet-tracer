@@ -25,6 +25,26 @@ Network Components
 | Servers     | 1        | Server0                             | Centralized service (DHCP, DNS, or Web)          |
 | Cables      | Multiple | Copper straight-through, Serial DCE | Used to connect PCs, switches, and routers       |
 
+Core Network Services
+| Device                 | IPv4 Address  | Subnet Mask   | IPv6 Address         | Prefix | Default Gateway |
+| ---------------------- | ------------- | ------------- | -------------------- | ------ | --------------- |
+| **HTTP Server**        | 192.168.1.100 | 255.255.255.0 | fd00:db8:face:1::100 | /64    | 192.168.1.1     |
+| **DNS Server**         | 192.168.1.101 | 255.255.255.0 | fd00:db8:face:1::101 | /64    | 192.168.1.1     |
+| **3550 Switch (Core)** | 192.168.1.1   | 255.255.255.0 | fd00:db8:face:1::1   | /64    | -               |
+
+
+Star Department (VLAN 10 – Staff)
+| Device                      | IPv4 Address  | Subnet Mask   | IPv6 Address         | Prefix | Default Gateway |
+| --------------------------- | ------------- | ------------- | -------------------- | ------ | --------------- |
+| **PC7**                     | 192.168.10.10 | 255.255.255.0 | fd00:db8:face:10::10 | /64    | 192.168.10.1    |
+| **PC8**                     | 192.168.10.11 | 255.255.255.0 | fd00:db8:face:10::11 | /64    | 192.168.10.1    |
+| **Star-sw (Access Switch)** | 192.168.10.1  | 255.255.255.0 | fd00:db8:face:10::1  | /64    | -               |
+
+| Device  | IPv4 Address  | Subnet Mask   | IPv6 Address         | Prefix | Default Gateway |
+| ------- | ------------- | ------------- | -------------------- | ------ | --------------- |
+| **PC5** | 192.168.20.10 | 255.255.255.0 | fd00:db8:face:20::10 | /64    | 192.168.20.1    |
+| **PC6** | 192.168.20.11 | 255.255.255.0 | fd00:db8:face:20::11 | /64    | 192.168.20.1    |
+
 Topology Design
 
 The Star segment connects PCs to a central switch.
